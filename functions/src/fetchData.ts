@@ -90,8 +90,6 @@ const fetchData = async () => {
     const filteredStatusList: FilteredStationStatus[] = originalStationStatus.map(getStatusInfo(lastUpdated))
 
     const merged = mergeInfoListAndStatusList(filteredStationInfoList, filteredStatusList);
-    
-    console.log(merged);
     return merged;
 };
 
