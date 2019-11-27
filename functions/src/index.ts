@@ -9,3 +9,5 @@ export const getBikeShareData = functions.pubsub
         return fetchAndSaveToBigQuery();
     });
 
+
+export const newUser = functions.auth.user().onCreate
