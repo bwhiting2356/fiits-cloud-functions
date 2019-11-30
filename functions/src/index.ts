@@ -1,11 +1,12 @@
 import * as functions from 'firebase-functions';
-import { fetchAndSaveToBigQuery } from './fetchData';
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
+
+import { fetchAndSaveToBigQuery } from './fetchAndSaveData';
+import { createUser } from './createUser';
+
 export const getBikeShareData = functions.pubsub
     .topic('get-bikeshare-data')
-    .onPublish(() => {
-        return fetchAndSaveToBigQuery();
-    });
+    .onPublish(fetchAndSaveToBigQuery);
 
+export const newUser = functions.auth
+    .user()
+    .onCreate(createUser)
