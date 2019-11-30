@@ -6,4 +6,4 @@ This function is tied to a GCP Cloud Scheduler job and GCP PubSub topic which wi
 
 ## New User Create Profile
 
-This function is to create a new user profile in the firestore users collection every time there is a new signup.
+This function is to create a new user profile in the backend database every time there is a new signup.
